@@ -4,6 +4,7 @@ using Admin.NET.Application.Entity;
 using Admin.NET.Core;
 using Furion.DynamicApiController; // 动态API( Public method -> HTTP 接口), IDynamicApiController
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel; // DisplayName
 
 namespace Admin.NET.Application.Service.WoodFish;
 
@@ -13,10 +14,10 @@ namespace Admin.NET.Application.Service.WoodFish;
 public class WoodFishService : IDynamicApiController,ITransient
 {
   // _repo: 这是一个数据库操作仓库，专门用来操作 WoodFishLog 表。
-  private readonly ISqlSugarRepository<WoodFishLog> _repo;
+  private readonly SqlSugarRepository<WoodFishLog> _repo;
 
   // 构造函数: 这里通过依赖注入把仓库传进来。
-  public WoodFishService(ISqlSugarRepository<WoodFishLog> repo)
+  public WoodFishService(SqlSugarRepository<WoodFishLog> repo)
   {
     _repo = repo;
   }
@@ -32,7 +33,7 @@ public class WoodFishService : IDynamicApiController,ITransient
         Merit = 1,          // 功德 +1
         Luck = 1,           // 好运 +1
         Wisdom = 1,         // 智慧 +1
-        CreateTime = DateTime.Now // 记录时间（其实EntityBase会自动处理，但不写也可以）
+        // CreateTime = DateTime.Now // 记录时间（其实EntityBase会自动处理，但不写也可以）
     });
     return "敲击成功";
   }
