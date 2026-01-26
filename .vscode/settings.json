@@ -1,0 +1,13 @@
+{
+    "git.ignoreLimitWarning": true,
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorCustomizations": {
+      "[Atom One Light]": {
+        "editor.background": "#C7EDCC",
+        "sideBar.background": "#C7EDCC",
+        "activityBar.background": "#C7EDCC"
+      }
+    }
+  }
+  
