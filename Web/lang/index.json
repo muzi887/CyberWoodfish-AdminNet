@@ -12955,5 +12955,187 @@
 		"zh-tw": "",
 		"en": "",
 		"it": ""
+	},
+	"lohubd5": {
+		"zh-cn": "自动积攒：",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"irk1": {
+		"zh-cn": "开",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"g371": {
+		"zh-cn": "关",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"goc4tt4": {
+		"zh-cn": "背景模式",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"gqi30o4": {
+		"zh-cn": "自动档位",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"fnc9096": {
+		"zh-cn": " 手动音量 ",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"y2ltoa6": {
+		"zh-cn": " 自动音量 ",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"anryvw8": {
+		"zh-cn": "清零/自定义重置",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"wvugshqs": {
+		"zh-cn": "<svg data-insp-path=\"Web/src/views/woodenfish/index.vue:36:5:svg\" width=\"240\" height=\"240\" viewBox=\"0 0 240 240\" xmlns=\"http://www.w3.org/2000/svg\" aria-label=\"木鱼\"><ellipse data-insp-path=\"Web/src/views/woodenfish/index.vue:37:6:ellipse\" cx=\"120\" cy=\"120\" rx=\"92\" ry=\"70\" fill=\"rgb(184,107,50)\" stroke=\"rgb(120,70,35)\" stroke-width=\"8\"></ellipse><ellipse data-insp-path=\"Web/src/views/woodenfish/index.vue:38:6:ellipse\" cx=\"120\" cy=\"120\" rx=\"58\" ry=\"42\" fill=\"rgb(208,135,74)\" opacity=\"0.7\"></ellipse><circle data-insp-path=\"Web/src/views/woodenfish/index.vue:39:6:circle\" cx=\"160\" cy=\"90\" r=\"11\" fill=\"rgb(120,70,35)\"></circle><path data-insp-path=\"Web/src/views/woodenfish/index.vue:40:6:path\" d=\"M60 140 C90 170 150 170 180 140\" fill=\"none\" stroke=\"rgb(120,70,35)\" stroke-width=\"6\" stroke-linecap=\"round\"></path><rect data-insp-path=\"Web/src/views/woodenfish/index.vue:41:6:rect\" x=\"106\" y=\"24\" width=\"28\" height=\"42\" rx=\"10\" fill=\"rgb(140,80,40)\"></rect></svg>",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"eku02": {
+		"zh-cn": "功德",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"at65we4": {
+		"zh-cn": "功德+1",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"g0dv2": {
+		"zh-cn": "好运",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"bveb2x4": {
+		"zh-cn": "好运+1",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"hyr12": {
+		"zh-cn": "智慧",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"dbkok34": {
+		"zh-cn": "智慧+1",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"t0cgor7": {
+		"zh-cn": "☯️ 太极平衡",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"xnng7q7": {
+		"zh-cn": "🎡 赛博轮回",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"8yt51y7": {
+		"zh-cn": "⚗️ 炼金术师",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"3rhd77l": {
+		"zh-cn": "请输入要重置到的数字（留空或 0 为清零）",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"dum9967": {
+		"zh-cn": "请输入非负整数",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"4ea18sb": {
+		"zh-cn": "确认将所有数值重置为 ",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"gd1k3": {
+		"zh-cn": " 吗？",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"z9ivnjtg": {
+		"zh-cn": "<svg data-insp-path=\"Web/src/views/woodenfish/index.vue:36:5:svg\" width=\"240\" height=\"240\" viewBox=\"0 0 240 240\" xmlns=\"http://www.w3.org/2000/svg\" aria-label=\"木鱼\" data-v-7f7e2f50><ellipse data-insp-path=\"Web/src/views/woodenfish/index.vue:37:6:ellipse\" cx=\"120\" cy=\"120\" rx=\"92\" ry=\"70\" fill=\"rgb(184,107,50)\" stroke=\"rgb(120,70,35)\" stroke-width=\"8\" data-v-7f7e2f50></ellipse><ellipse data-insp-path=\"Web/src/views/woodenfish/index.vue:38:6:ellipse\" cx=\"120\" cy=\"120\" rx=\"58\" ry=\"42\" fill=\"rgb(208,135,74)\" opacity=\"0.7\" data-v-7f7e2f50></ellipse><circle data-insp-path=\"Web/src/views/woodenfish/index.vue:39:6:circle\" cx=\"160\" cy=\"90\" r=\"11\" fill=\"rgb(120,70,35)\" data-v-7f7e2f50></circle><path data-insp-path=\"Web/src/views/woodenfish/index.vue:40:6:path\" d=\"M60 140 C90 170 150 170 180 140\" fill=\"none\" stroke=\"rgb(120,70,35)\" stroke-width=\"6\" stroke-linecap=\"round\" data-v-7f7e2f50></path><rect data-insp-path=\"Web/src/views/woodenfish/index.vue:41:6:rect\" x=\"106\" y=\"24\" width=\"28\" height=\"42\" rx=\"10\" fill=\"rgb(140,80,40)\" data-v-7f7e2f50></rect></svg>",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"dn7njntg": {
+		"zh-cn": "<svg data-insp-path=\"Web/src/views/woodenfish/index.vue:38:5:svg\" width=\"240\" height=\"240\" viewBox=\"0 0 240 240\" xmlns=\"http://www.w3.org/2000/svg\" aria-label=\"木鱼\" data-v-7f7e2f50><ellipse data-insp-path=\"Web/src/views/woodenfish/index.vue:39:6:ellipse\" cx=\"120\" cy=\"120\" rx=\"92\" ry=\"70\" fill=\"rgb(184,107,50)\" stroke=\"rgb(120,70,35)\" stroke-width=\"8\" data-v-7f7e2f50></ellipse><ellipse data-insp-path=\"Web/src/views/woodenfish/index.vue:40:6:ellipse\" cx=\"120\" cy=\"120\" rx=\"58\" ry=\"42\" fill=\"rgb(208,135,74)\" opacity=\"0.7\" data-v-7f7e2f50></ellipse><circle data-insp-path=\"Web/src/views/woodenfish/index.vue:41:6:circle\" cx=\"160\" cy=\"90\" r=\"11\" fill=\"rgb(120,70,35)\" data-v-7f7e2f50></circle><path data-insp-path=\"Web/src/views/woodenfish/index.vue:42:6:path\" d=\"M60 140 C90 170 150 170 180 140\" fill=\"none\" stroke=\"rgb(120,70,35)\" stroke-width=\"6\" stroke-linecap=\"round\" data-v-7f7e2f50></path><rect data-insp-path=\"Web/src/views/woodenfish/index.vue:43:6:rect\" x=\"106\" y=\"24\" width=\"28\" height=\"42\" rx=\"10\" fill=\"rgb(140,80,40)\" data-v-7f7e2f50></rect></svg>",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"1bwgkv6": {
+		"zh-cn": " 数据范围 ",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"72aed28": {
+		"zh-cn": " 授权数据范围 ",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
 	}
 }

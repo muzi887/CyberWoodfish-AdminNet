@@ -18,7 +18,8 @@ public class SysUserSeedData : ISqlSugarEntitySeedData<SysUser>
     /// <returns></returns>
     public IEnumerable<SysUser> HasData()
     {
-        var encryptPassword = CryptogramUtil.Encrypt(new SysConfigSeedData().HasData().First(u => u.Code == ConfigConst.SysPassword).Value);
+        // var encryptPassword = CryptogramUtil.Encrypt(new SysConfigSeedData().HasData().First(u => u.Code == ConfigConst.SysPassword).Value);
+        var encryptPassword = CryptogramUtil.Encrypt("123456");
         var posList = new SysPosSeedData().HasData().ToList();
         return new[]
         {
