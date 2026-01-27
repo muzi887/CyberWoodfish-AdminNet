@@ -6,31 +6,31 @@
 			<div v-for="item in WOODFISH_STATS" :key="item.key" class="stat" :class="item.typeClass" @click="handleManualKnock(item.key)">{{ item.label }}：{{ counts[item.key] }}</div>
 		</div>
 		<div class="right-panel">
-		<button class="auto-toggle" :class="{ on: isAuto }" @click="toggleAuto">自动积攒：{{ isAuto ? '开' : '关' }}</button>
-		<div class="control-panel">
-			<button class="mode-btn" @click="toggleBgMode">
-				<span class="mode-label">背景模式</span>
-				<span class="mode-value">{{ currentMode.label }}</span>
-			</button>
-			<div class="speed-group">
-				<span class="speed-label">自动档位</span>
-				<button v-for="option in speedOptions" :key="option.value" class="speed-btn" :class="{ active: autoInterval === option.value }" @click="setAutoInterval(option.value)">
-					{{ option.label }}
+			<button class="auto-toggle" :class="{ on: isAuto }" @click="toggleAuto">自动积攒：{{ isAuto ? '开' : '关' }}</button>
+			<div class="control-panel">
+				<button class="mode-btn" @click="toggleBgMode">
+					<span class="mode-label">背景模式</span>
+					<span class="mode-value">{{ currentMode.label }}</span>
 				</button>
-			</div>
-			<div class="volume-group">
-				<label class="volume-label">
-					手动音量
-					<input type="range" min="0" max="1" step="0.01" v-model.number="manualVolume" @input="onManualVolumeChange" />
-					<span class="volume-value">{{ manualVolume.toFixed(2) }}</span>
-				</label>
-				<label class="volume-label">
-					自动音量
-					<input type="range" min="0" max="1" step="0.01" v-model.number="autoVolume" @input="onAutoVolumeChange" />
-					<span class="volume-value">{{ autoVolume.toFixed(2) }}</span>
-				</label>
-			</div>
-			<button class="reset-btn" @click="resetCounts">清零/自定义重置</button>
+				<div class="speed-group">
+					<span class="speed-label">自动档位</span>
+					<button v-for="option in speedOptions" :key="option.value" class="speed-btn" :class="{ active: autoInterval === option.value }" @click="setAutoInterval(option.value)">
+						{{ option.label }}
+					</button>
+				</div>
+				<div class="volume-group">
+					<label class="volume-label">
+						手动音量
+						<input type="range" min="0" max="1" step="0.01" v-model.number="manualVolume" @input="onManualVolumeChange" />
+						<span class="volume-value">{{ manualVolume.toFixed(2) }}</span>
+					</label>
+					<label class="volume-label">
+						自动音量
+						<input type="range" min="0" max="1" step="0.01" v-model.number="autoVolume" @input="onAutoVolumeChange" />
+						<span class="volume-value">{{ autoVolume.toFixed(2) }}</span>
+					</label>
+				</div>
+				<button class="reset-btn" @click="resetCounts">清零/自定义重置</button>
 			</div>
 		</div>
 		<div class="stage">
@@ -91,16 +91,16 @@ const {
 
 <style scoped lang="scss">
 .wooden-fish-container {
-	position: relative;
-	// top: 100px;
-	height: 100%;
-	min-height: 600px;
-	padding: 20px;
+	position: relative; /* 自适应框架内容区 */
+	width: 100%;
+	min-height: calc(100vh - 120px); /* 计算剩余空间 */
+	z-index: 1; /* 确保背景色在框架之上 */
 	display: grid;
 	place-items: center;
-	/* background: radial-gradient(circle at top,transparent 0%, #0b0b12 90%); */
-	/* ✨ 核心 CSS：添加背景色过渡动画 */
-	transition: background-color 0.6s ease-in-out;
+	padding: 20px;
+	transition: background-color 0.6s ease-in-out; /* 背景色过渡动画 */
+	border-radius: 8px; /* 强制覆盖框架可能的背景色干扰 */
+	overflow: hidden; /* 防止波纹溢出 */
 }
 
 .wooden-fish-container.gold-mode {

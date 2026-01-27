@@ -18,7 +18,11 @@ export function useWoodfish() {
 
 	// --- 状态初始化 ---
 	// 使用 reactive 对象存储所有计数值，Key 对应配置表中的 key
-	const counts = reactive<Record<string, number>>({});
+	const counts = reactive<Record<string, number>>({
+		merit: 0,
+		luck: 0,
+		wisdom: 0,
+	});
 
 	// 组件加载时，从后端获取真实数据
 	onMounted(async () => {
