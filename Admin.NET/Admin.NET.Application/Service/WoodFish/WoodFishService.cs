@@ -1,7 +1,7 @@
 // Admin.NET/Admin.NET.Application/Service/WoodFish/WoodFishService.cs
 
-using Admin.NET.Application.Entity;
 using Admin.NET.Core;
+using Admin.NET.Application.Entity;
 using Elastic.Clients.Elasticsearch.MachineLearning;
 using Furion.DynamicApiController; // 动态API( Public class method -> HTTP API 接口), IDynamicApiController
 using Microsoft.AspNetCore.Mvc;
@@ -31,14 +31,14 @@ public class WoodFishService : IDynamicApiController,ITransient
     public string? KnockType { get; set; } // 敲击类型
   }
 
-/// <summary>
-/// 敲一次木鱼
-/// </summary>
-/// <param name="input">敲击参数</param>
-/// <remarks>
-/// 每次调用此接口，功德、好运、智慧均+1。
-/// </remarks>
-/// <returns>返回成功提示</returns>
+  /// <summary>
+  /// 敲一次木鱼
+  /// </summary>
+  /// <param name="input">敲击参数</param>
+  /// <remarks>
+  /// 每次调用此接口，功德、好运、智慧均+1。
+  /// </remarks>
+  /// <returns>返回成功提示</returns>
   [DisplayName("敲一次木鱼")]
   [HttpPost]
   public async Task<string> Knock([FromBody] KnockInput input) // [FromBody] 表示从 JSONBody 里取参数
