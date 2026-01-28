@@ -11,7 +11,7 @@ namespace Admin.NET.Application.Service;
 /// <summary>
 /// 记录级共享服务
 /// </summary>
-[ApiDescriptionSettings(Order = 100)] // 设置在Swagger 文档里的排序
+[ApiDescriptionSettings("系统记录级共享", Tag = "SysRecordShare", Order = 100)] // 设置在Swagger 文档里的排序
 public class SysRecordShareService : IDynamicApiController, ITransient // 实现 ITransient 接口，表示该服务是瞬时生命周期
 {
   // 数据库操作对象（数据库管家）

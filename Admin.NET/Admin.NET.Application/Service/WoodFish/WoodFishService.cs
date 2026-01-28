@@ -43,14 +43,39 @@ public class WoodFishService : IDynamicApiController,ITransient
   [HttpPost]
   public async Task<string> Knock([FromBody] KnockInput input) // [FromBody] 表示从 JSONBody 里取参数
   {
-    // 核心业务： 每敲一次木鱼，就往数据库里插入一条新记录，记录功德、好运、智慧各+1。
+    // 初始化三个变量都为 0
+    int addMerit = 0;
+    int addLuck = 0;
+    int addWisdom = 0;
+
+    // 根据前端传过来的类型，只让对应的变量加1
+    switch (input.KnockType?.ToLower()) // ToLower 防止大小写意外
+    {
+      case "merit":
+        addMerit = 1;
+        break;
+      case "luck":
+        addLuck = 1;
+        break;
+      case "wisdom":
+        addWisdom = 1;
+        break;
+      default:
+        // 如果类型不匹配，默认全部加1
+        addMerit = 1;
+        addLuck = 1;
+        addWisdom = 1;
+        break;
+    }
+
+    // 核心业务： 每敲一次木鱼，就往数据库里插入一条新记录。
     await _repo.InsertAsync(new WoodFishLog 
     { 
-        Merit = 1,          // 功德 +1
-        Luck = 1,           // 好运 +1
-        Wisdom = 1,         // 智慧 +1
-        Volume = input.Volume,         // 存入数据库
-        KnockType = input.KnockType,   // 存入数据库
+        Merit = addMerit,          
+        Luck = addLuck,           
+        Wisdom = addWisdom,         
+        Volume = input.Volume,         
+        KnockType = input.KnockType,   
         // CreateTime = DateTime.Now // 记录时间（其实EntityBase会自动处理，但不写也可以）
     });
     return "敲击成功";

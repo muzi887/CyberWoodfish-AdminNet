@@ -154,7 +154,7 @@ export function useWoodfish() {
 		try {
 			await knockWoodenFish({
 				volume: options.volume ?? 1,
-				knockType: options.knockType,
+				knockType: picked.key, // 发给后端
 			});
 		} catch (e) {
 			console.error(e);
