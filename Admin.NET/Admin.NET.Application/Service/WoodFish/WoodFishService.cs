@@ -113,4 +113,17 @@ public class WoodFishService : IDynamicApiController,ITransient
   {
     _repo.Delete(u => true); // 删除所有记录
   }
+
+  /// <summary>
+  /// 分页查询木鱼日志（会自动触发记录级共享过滤器）
+  /// </summary>
+  [HttpGet]
+  public async Task<SqlSugarPagedList<WoodFishLog>> GetPage(int page = 1, int pageSize = 20)
+  {
+    // _rep是在构造函数里注入的仓储
+    // AsQueryable() 会自动被 RecordShareFilter 拦截
+    return await _repo.AsQueryable()
+      .OrderByDescending(u => u.CreateTime) // 按创建时间降序
+      .ToPagedListAsync(page, pageSize); // 分页查询
+  }
 }
