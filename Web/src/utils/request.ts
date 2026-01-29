@@ -142,21 +142,28 @@ service.interceptors.response.use(
 	},
 	(error) => {
 		// 处理响应错误
-		if (error.response) {
-			if (error.response.status === 401) {
-				clearAccessAfterReload();
-			}
+		const response = error?.response;
+
+		// 处理 401（没登录/Token 过期）
+		if (response?.status === 401) {
+			clearAccessAfterReload();
 		}
 
-		// 对响应错误做点什么
-		if (error.message.indexOf('timeout') != -1) {
-			ElMessage.error('网络超时');
-		} else if (error.message == 'Network Error') {
-			ElMessage.error('网络连接错误');
+		// 统一兜底提示，避免 response 为空时读取 data 报错
+		let errMsg = '';
+		if (error?.message?.indexOf('timeout') !== -1) {
+			errMsg = '网络超时';
+		} else if (error?.message === 'Network Error') {
+			errMsg = '网络连接错误';
+		} else if (response?.data) {
+			// 优先使用后端返回的 message，否则退回到 statusText
+			errMsg = response.data.message || response.statusText || '请求失败';
 		} else {
-			if (error.response.data) ElMessage.error(error.response.statusText);
-			else ElMessage.error('接口路径找不到');
+			errMsg = error?.message || '接口路径找不到';
 		}
+
+		// 显示错误消息(弹窗)
+		ElMessage.error(errMsg);
 
 		return Promise.reject(error);
 	}

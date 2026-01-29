@@ -32,7 +32,7 @@ public class SysRecordShareService : IDynamicApiController, ITransient // 实现
   /// <param name="input">输入参数</param>
   /// <returns></returns>
   [HttpPost]
-  public async Task AddShare(ShareInputDto input)
+  public async Task<long> AddShare(ShareInputDto input)
   {
     // 获取当前登陆人的ID（授权人）
     var currentUserId = _userManager.UserId;
@@ -47,8 +47,10 @@ public class SysRecordShareService : IDynamicApiController, ITransient // 实现
       ExpireAt = input.ExpireAt
     };
 
-    // 写入数据库
-    await _rep.InsertAsync(shareRecord);
+    // 写入数据库并返回实体
+    var result = await _rep.InsertReturnEntityAsync(shareRecord);
+
+    return result.Id;
   }
 
   /// <summary>

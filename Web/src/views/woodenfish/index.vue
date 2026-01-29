@@ -6,6 +6,7 @@
 			<div v-for="item in WOODFISH_STATS" :key="item.key" class="stat" :class="item.typeClass" @click="handleManualKnock(item.key)">{{ item.label }}：{{ counts[item.key] }}</div>
 		</div>
 		<div class="right-panel">
+			<button class="auto-toggle" style="margin-bottom: 10px" @click="handleShareClick">分享记录</button>
 			<button class="auto-toggle" :class="{ on: isAuto }" @click="toggleAuto">自动积攒：{{ isAuto ? '开' : '关' }}</button>
 			<div class="control-panel">
 				<button class="mode-btn" @click="toggleBgMode">
@@ -33,8 +34,9 @@
 				<button class="reset-btn" @click="resetCounts">清零/自定义重置</button>
 			</div>
 		</div>
+		<ShareRecordDialog ref="shareDialogRef" />
 		<div class="stage">
-			<button class="woodfish" :class="{ 'is-active': isActive }" @click="handleManualKnock()" v-auth="'sys:woodfish:knock'">
+			<button class="woodfish" :class="{ 'is-active': isActive }" @click="onKnockClick()" v-auth="'sys:woodfish:knock'">
 				<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-label="木鱼">
 					<ellipse cx="120" cy="120" rx="92" ry="70" fill="rgb(184,107,50)" stroke="rgb(120,70,35)" stroke-width="8" />
 					<ellipse cx="120" cy="120" rx="58" ry="42" fill="rgb(208,135,74)" opacity="0.7" />
@@ -55,10 +57,12 @@
 	</div>
 </template>
 
-<script setup name="woodenFish">
-// 或者 defineOptions({ name: 'woodenFish' });
+<script setup lang="ts">
+import { ref } from 'vue';
 import { useWoodfish } from './composables/useWoodfish';
 import { WOODFISH_STATS } from './composables/woodfishConfig';
+import ShareRecordDialog from '../../components/ShareRecord/index.vue';
+import { knockWoodenFish } from '../../api/woodenFish';
 
 // 纯静态配置
 const speedOptions = [
@@ -66,6 +70,48 @@ const speedOptions = [
 	{ label: '1s', value: 1000 },
 	{ label: '2s', value: 2000 },
 ];
+
+// 组件的引用 ref
+const shareDialogRef = ref<InstanceType<typeof ShareRecordDialog> | null>(null);
+
+const lastKnockId = ref<number | string | null>(null);
+
+// 点击木鱼的包装函数
+const onKnockClick = async () => {
+	handleManualKnock();
+
+	// 获取ID
+	try {
+		// 发请求
+		const res = await knockWoodenFish({
+			volume: manualVolume.value,
+			knockType: 'merit',
+		});
+
+		// 保存后端返回的敲击记录ID（兼容 res.data 结构）
+		const resultId = res?.data?.result ?? res?.data?.data ?? res?.result;
+		if (!resultId) {
+			console.warn('敲木鱼接口未返回记录ID', res);
+			return;
+		}
+		lastKnockId.value = resultId;
+		console.log('敲木鱼成功，ID：', lastKnockId.value);
+	} catch (err) {
+		console.error('敲木鱼失败：', err);
+	}
+};
+
+// 点击分享按钮的处理函数
+const handleShareClick = () => {
+	if (!lastKnockId.value) {
+		alert('请先敲击木鱼以生成分享记录！');
+		return;
+	}
+	// 调用组件的 openDialog 方法
+	if (shareDialogRef.value) {
+		shareDialogRef.value.openDialog(lastKnockId.value, 'woodFishLog');
+	}
+};
 
 // 一键解构所有逻辑
 const {
@@ -87,6 +133,8 @@ const {
 	onManualVolumeChange,
 	onAutoVolumeChange,
 } = useWoodfish();
+
+defineOptions({ name: 'woodenFish' });
 </script>
 
 <style scoped lang="scss">

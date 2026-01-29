@@ -36,12 +36,12 @@ public class WoodFishService : IDynamicApiController,ITransient
   /// </summary>
   /// <param name="input">敲击参数</param>
   /// <remarks>
-  /// 每次调用此接口，功德、好运、智慧均+1。
+  /// 每次调用此接口，功德、好运、智慧随机 +1 。
   /// </remarks>
   /// <returns>返回成功提示</returns>
   [DisplayName("敲一次木鱼")]
   [HttpPost]
-  public async Task<string> Knock([FromBody] KnockInput input) // [FromBody] 表示从 JSONBody 里取参数
+  public async Task<long> Knock([FromBody] KnockInput input) // [FromBody] 表示从 JSONBody 里取参数
   {
     // 初始化三个变量都为 0
     int addMerit = 0;
@@ -68,17 +68,20 @@ public class WoodFishService : IDynamicApiController,ITransient
         break;
     }
 
-    // 核心业务： 每敲一次木鱼，就往数据库里插入一条新记录。
-    await _repo.InsertAsync(new WoodFishLog 
-    { 
-        Merit = addMerit,          
-        Luck = addLuck,           
-        Wisdom = addWisdom,         
-        Volume = input.Volume,         
-        KnockType = input.KnockType,   
-        // CreateTime = DateTime.Now // 记录时间（其实EntityBase会自动处理，但不写也可以）
-    });
-    return "敲击成功";
+    // 创建实体对象
+    var logEntity = new WoodFishLog
+    {
+      Merit = addMerit,
+      Luck = addLuck,
+      Wisdom = addWisdom,
+      Volume = input.Volume,
+      KnockType = input.KnockType,
+    };
+
+    // 核心业务：把数据插入数据库，并把生成的 ID 填回 logEntity 对象中
+    var newLog = await _repo.InsertReturnEntityAsync(logEntity);
+
+    return newLog.Id;
   }
 
   /// <summary>

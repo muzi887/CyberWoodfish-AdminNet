@@ -13144,5 +13144,152 @@
 		"zh-tw": "",
 		"en": "",
 		"it": ""
+	},
+	"2f7hhr8": {
+		"zh-cn": "加载用户列表失败",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"z8fazj7": {
+		"zh-cn": "请选择目标用户",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"9ymo6a8": {
+		"zh-cn": "分享记录添加成功",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"62q0838": {
+		"zh-cn": "添加分享记录失败",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"d7jvmr4": {
+		"zh-cn": "数据分享",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"cel1w3": {
+		"zh-cn": "分享给",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"27k1ha6": {
+		"zh-cn": "加载中...",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"2ehz0a5": {
+		"zh-cn": "请选择用户",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"ikg3cm4": {
+		"zh-cn": "过期时间",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"n9f4107": {
+		"zh-cn": "留空则永久有效",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"ev0tfv6": {
+		"zh-cn": "提交中...",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"fkn3v54": {
+		"zh-cn": "确定分享",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"ack6kve": {
+		"zh-cn": "请先敲击木鱼以生成分享记录！",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"aomu2y4": {
+		"zh-cn": "分享记录",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"p9qig5tg": {
+		"zh-cn": "<svg data-insp-path=\"Web/src/views/woodenfish/index.vue:40:5:svg\" width=\"240\" height=\"240\" viewBox=\"0 0 240 240\" xmlns=\"http://www.w3.org/2000/svg\" aria-label=\"木鱼\" data-v-7f7e2f50><ellipse data-insp-path=\"Web/src/views/woodenfish/index.vue:41:6:ellipse\" cx=\"120\" cy=\"120\" rx=\"92\" ry=\"70\" fill=\"rgb(184,107,50)\" stroke=\"rgb(120,70,35)\" stroke-width=\"8\" data-v-7f7e2f50></ellipse><ellipse data-insp-path=\"Web/src/views/woodenfish/index.vue:42:6:ellipse\" cx=\"120\" cy=\"120\" rx=\"58\" ry=\"42\" fill=\"rgb(208,135,74)\" opacity=\"0.7\" data-v-7f7e2f50></ellipse><circle data-insp-path=\"Web/src/views/woodenfish/index.vue:43:6:circle\" cx=\"160\" cy=\"90\" r=\"11\" fill=\"rgb(120,70,35)\" data-v-7f7e2f50></circle><path data-insp-path=\"Web/src/views/woodenfish/index.vue:44:6:path\" d=\"M60 140 C90 170 150 170 180 140\" fill=\"none\" stroke=\"rgb(120,70,35)\" stroke-width=\"6\" stroke-linecap=\"round\" data-v-7f7e2f50></path><rect data-insp-path=\"Web/src/views/woodenfish/index.vue:45:6:rect\" x=\"106\" y=\"24\" width=\"28\" height=\"42\" rx=\"10\" fill=\"rgb(140,80,40)\" data-v-7f7e2f50></rect></svg>",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"qbzdks9": {
+		"zh-cn": "请选择目标分享用户",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"i3trb34": {
+		"zh-cn": "请求失败",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"bra32i6": {
+		"zh-cn": " 电子签名 ",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"xzd9zs5": {
+		"zh-cn": "个性化首页",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"s8nf8b8": {
+		"zh-cn": " 保存基本信息 ",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
+	},
+	"eoon9g6": {
+		"zh-cn": " 横向/纵向",
+		"zh-hk": "",
+		"zh-tw": "",
+		"en": "",
+		"it": ""
 	}
 }
