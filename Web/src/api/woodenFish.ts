@@ -6,6 +6,7 @@ enum API {
   Knock = '/api/woodFish/knock',
   Stats = '/api/woodFish/stats',
   Reset = '/api/woodFish/reset',
+  Page = '/api/woodFish/page',
 }
 
 // 前端调用接口时的入参类型定义
@@ -20,6 +21,7 @@ export const knockWoodenFish = (data: KnockParams) => {
   // request（axios 实例）收到 config.data
   // axios 自动把 data 序列化成 JSON 并放进 Body，发给后端
   return request({
+    // 访问枚举对象
     url: API.Knock,
     method: 'post',
     data:data, 
@@ -41,3 +43,12 @@ export const resetWoodenFish = () => {
     method: 'post',
   });
 };
+
+// 分页获取木鱼日志
+export const getWoodenFishPage = (page: number, pageSize: number) => {
+  return request({
+    // 使用模板字符串拼接URL
+    url: `${API.Page}/${page}/${pageSize}`,
+    method:'get',
+  })
+}

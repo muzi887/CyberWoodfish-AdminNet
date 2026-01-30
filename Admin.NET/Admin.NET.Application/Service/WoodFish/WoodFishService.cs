@@ -118,8 +118,11 @@ public class WoodFishService : IDynamicApiController,ITransient
   }
 
   /// <summary>
-  /// 分页查询木鱼日志（会自动触发记录级共享过滤器）
+  /// 分页查询木鱼日志
   /// </summary>
+  /// <remarks>
+  /// 会自动触发记录级共享过滤器
+  /// </remarks>
   [HttpGet]
   public async Task<SqlSugarPagedList<WoodFishLog>> GetPage(int page = 1, int pageSize = 20)
   {
